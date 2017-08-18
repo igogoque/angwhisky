@@ -1,0 +1,43 @@
+﻿<div ng-controller="CatProdController">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 tdwelcome"><h2>{{Catname}}</h2></div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <p class="proddesc">Сортировать по
+              <select onchange="location=value">
+              <option ng-selected="soart==0" value ="cat/{{catid}}/0">Наименование по возрастанию</option>
+              <option ng-selected="soart==1" value="cat/{{catid}}/1">Наименование по убыванию</option>
+              <option ng-selected="soart==2" value="cat/{{catid}}/2">Цена по возрастанию</option>
+              <option ng-selected="soart==3" value="cat/{{catid}}/3">Цена по убыванию</option>
+              </select>
+              </p>
+          </div>
+          <div class="col-md-6"></div>
+      </div>
+      <div class="row" ng-if="soart==0">
+        <div class="leftdiv" ng-repeat="CProd in CatProducts | orderBy: 'name'">
+           <a href="prod/{{CProd.id}}" class="prodpictitle"><img class="prodimg" ng-src="{{BasePath + CProd.pic}}" width="250" height="300"/></a><p class="prodpictitle">{{CProd.name}}<br>{{'('+ CProd.price + ' руб., '+ (CProd.qnty - CProd.reserved) + ' шт.)'}}</p>
+        </div>
+      </div>
+      <div class="row" ng-if="soart==1">
+        <div class="leftdiv" ng-repeat="CProd in CatProducts | orderBy: 'name':true">
+           <a href="prod/{{CProd.id}}" class="prodpictitle"><img class="prodimg" ng-src="{{BasePath + CProd.pic}}" width="250" height="300"/></a><p class="prodpictitle">{{CProd.name}}<br>{{'('+ CProd.price + ' руб., '+ (CProd.qnty - CProd.reserved) + ' шт.)'}}</p>
+        </div>
+      </div>
+      <div class="row" ng-if="soart==2">
+        <div class="leftdiv" ng-repeat="CProd in CatProducts | orderBy: 'price'">
+           <a href="prod/{{CProd.id}}" class="prodpictitle"><img class="prodimg" ng-src="{{BasePath + CProd.pic}}" width="250" height="300"/></a><p class="prodpictitle">{{CProd.name}}<br>{{'('+ CProd.price + ' руб., '+ (CProd.qnty - CProd.reserved) + ' шт.)'}}</p>
+        </div>
+      </div>
+      <div class="row" ng-if="soart==3">
+        <div class="leftdiv" ng-repeat="CProd in CatProducts | orderBy: 'price':true">
+           <a href="prod/{{CProd.id}}" class="prodpictitle"><img class="prodimg" ng-src="{{BasePath + CProd.pic}}" width="250" height="300"/></a><p class="prodpictitle">{{CProd.name}}<br>{{'('+ CProd.price + ' руб., '+ (CProd.qnty - CProd.reserved) + ' шт.)'}}</p>
+        </div>
+      </div>
+
+    </div> 
+
+</div>

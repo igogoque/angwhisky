@@ -1,0 +1,23 @@
+﻿<div>
+    <h1 class="cattitle">Новый пароль</h1>
+    <form ng-submit="doReset()">
+    <p>Для сброса пароля вставьте полученный код, введите новый пароль и нажмите кнопку <strong>Сбросить пароль</strong></p>
+        <div>
+        <label>Введите код: </label><br>    
+        <input type="text" ng-model="account.usertoken" />
+        </div><br>
+        <div>
+        <label>Введите новый пароль: </label><br>
+            <input type="password" ng-model="account.Password" />
+        </div><br> 
+        <div>
+            <label>Подтверждение нового пароля: </label><br>
+            <input type="password" ng-model="account.Password2" />
+        </div><br> 
+        <input type="submit" value="Сбросить пароль" />
+        <div style="color:red">
+            {{message}}
+        </div>
+    </form>
+</div>
+

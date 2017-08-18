@@ -1,0 +1,5 @@
+C:\NEED\work\aspnet_mvc\whiskyshop\angwhisky\angwhisky\bin\angwhisky.dll
+C:\NEED\work\aspnet_mvc\whiskyshop\angwhisky\angwhisky\bin\angwhisky.pdb
+C:\NEED\work\aspnet_mvc\whiskyshop\angwhisky\angwhisky\obj\Debug\angwhisky.csprojResolveAssemblyReference.cache
+C:\NEED\work\aspnet_mvc\whiskyshop\angwhisky\angwhisky\obj\Debug\angwhisky.dll
+C:\NEED\work\aspnet_mvc\whiskyshop\angwhisky\angwhisky\obj\Debug\angwhisky.pdb

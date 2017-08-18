@@ -1,0 +1,19 @@
+﻿<div>
+    <h1 class="cattitle">Вход для зарегистрированных покупателей</h1>
+    <form ng-submit="login()">
+        <div>
+            <label>E-mail: </label><br>
+            <input type="text" ng-model="account.userName" />
+        </div><br> 
+        <div>
+            <label>Пароль: </label><br>
+            <input type="password" ng-model="account.Password" />
+        </div><br> 
+        <a class="logininfo" href="/forgotreq">Забыли пароль?</a></br><br>
+        <input type="submit" value="Войти" />
+        <div style="color:red">
+            {{message}}
+        </div>
+        <br><a class="cattitle" href="/register">Зарегистрироваться</a>
+    </form>
+</div>

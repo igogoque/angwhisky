@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <link data-require="bootstrap-css@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" />
+    <link href="/Content/angwhisky.css" rel="stylesheet" />
+    <base href="/" /> 
+  </head>
+
+  <body ng-app="angwhisky" ng-cloak>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 tdwelcome"><a href="/"><p>Мобильный демо-магазин виски</p></a></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="logindiv">{{loginwelcome}}</div><div ng-if="whiskyauth == false" class="logindiv"><a href="/login" class="cattitle">Войти/Зарегистрироваться</a></div>
+            <div ng-if="whiskyauth == true" class="logindiv"><a href="/logout" class="cattitle">Выйти</a></div>
+            <div ng-if="whiskyauth == true" class="logindivr"><a href="/bag" class="cattitle">Корзина</a></div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3"><p>Сегодня в ассортименте:</p></div>
+          <div class="col-md-9"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3" ng-controller="CatController">
+          <ul class="nav nav-pills nav-stacked" ng-repeat="cat in Cats">
+            <li><a class="cattitle" href="cat/{{cat.id}}/0">{{cat.name}}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+            <div ng-view></div>
+        </div>
+      </div>
+      <div class="row">
+      <p class="thefooter">Демо-магазин виски © All rights reserved</p>
+      </div>
+    </div>  
+    
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script data-require="angular.js@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+    <script data-require="angular-route@1.4.8" data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular-route.js"></script>
+    <script src="Scripts/angwhisky.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,13 @@
+﻿<div>
+    <h3>Добавить в корзину {{Prodname}}</h3>
+    <form ng-submit="addtobag()">
+        <div>
+            <label>Количество: </label><br>
+            <input type="number" value="1" ng-model="addbag.qnty" />
+        </div><br> 
+        <input type="submit" value="Добавить в корзину" />
+        <div style="color:red">
+            {{message}}
+        </div>
+    </form>
+</div>

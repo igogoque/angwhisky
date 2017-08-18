@@ -1,0 +1,15 @@
+﻿<div>
+<h1 class="cattitle">Корзина</h1><br><br>
+<div class="container">
+    <div class="row" ng-repeat="purch in Bags">
+        <div class="leftdivt col-md-4">{{purch.ProductName}}</div><div class="leftdivt col-md-2">{{purch.qnty + ' шт.'}}</div><div class="leftdivt col-md-2">{{purch.summa + ' руб.'}}</div>
+        <div class="leftdivt col-md-2"><a href="/delbag/{{purch.Id}}">Удалить</a></div>
+     </div>
+    <br>
+    <div class="row" ng-if="allsum > 0"><strong>Итого: {{allsum}} руб.</strong></div> 
+    <div class="row" ng-if="allsum == 0"><strong>Корзина пуста.</strong></div> 
+    <br>
+    <div class="row" ng-if="allsum > 0"><a class="cattitle" href="/dobuy">Сделать заказ</a></div>
+<div>
+
+</div>

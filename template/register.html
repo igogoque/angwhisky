@@ -1,0 +1,25 @@
+﻿<div>
+    <h1 class="cattitle">Регистрация покупателя</h1>
+    <form ng-submit="register()">
+        <div>
+            <label>Имя: </label><br>
+            <input type="text" ng-model="account.userName" />
+        </div><br> 
+        <div>
+            <label>E-mail: </label><br>
+            <input type="text" ng-model="account.Email" />
+        </div><br> 
+        <div>
+            <label>Пароль: </label><br>
+            <input type="password" ng-model="account.Password" />
+        </div><br> 
+        <div>
+            <label>Подтвердить пароль: </label><br>
+            <input type="password" ng-model="account.Password2" />
+        </div><br> 
+        <input type="submit" value="Зарегистрироваться" />
+        <div style="color:red">
+            {{message}}
+        </div>
+    </form>
+</div>

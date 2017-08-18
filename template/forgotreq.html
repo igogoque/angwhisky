@@ -1,0 +1,13 @@
+﻿<div>
+    <h1 class="cattitle">Сброс пароля</h1>
+    <form ng-submit="sendForgotReq()">
+        <div>
+            <label>E-mail: </label><br>
+            <input type="text" ng-model="forgotemail" />
+        </div><br> 
+        <input type="submit" value="Отправить уведомление о сбросе пароля на указанный адрес" />
+        <div style="color:red">
+            {{message}}
+        </div>
+    </form>
+</div>
