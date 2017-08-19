@@ -144,9 +144,9 @@ angwhisky.controller('OneProdController', ['$scope', 'serviceBasePath', '$routeP
 
 
 //логин
-angwhisky.controller('LoginController', ['$scope', 'accountService', '$location', 'userService', '$http',
-    'serviceBasePath', '$rootScope',
-    function ($scope, accountService, $location, userService, $http, serviceBasePath, $rootScope) {
+angwhisky.controller('LoginController', ['$scope', 'accountService', '$location', 'userService', 
+    '$rootScope', 'dataService',
+    function ($scope, accountService, $location, userService, $rootScope, dataService) {
     $scope.account = {
         userName: '',
         Password: ''
@@ -159,9 +159,8 @@ angwhisky.controller('LoginController', ['$scope', 'accountService', '$location'
             sessionStorage.CurrUserName = null;
             sessionStorage.usaid = null;
             var isConfirmed = false;
-
-            $http.get(serviceBasePath + 'api/AuthAPI').then(function (response) {
-                var usa = response.data;
+            dataService.getData('AuthAPI').then(function (data) {
+                var usa = data;
                 if (usa.IsConfirmed) {
                     $rootScope.whiskyauth = true;
                     $rootScope.loginwelcome = "Добро пожаловать, " + usa.userName + "!";
@@ -249,7 +248,10 @@ angwhisky.controller('ForgotReqController', ['$scope', 'serviceBasePath', '$http
             $http.post(serviceBasePath + 'api/ForgotReqAPI/', masyaga).then(function (data) {
                 $location.path('/waitconfirm');
             }, function (error) {
-                $scope.message = error.data;
+                if (error != null) {
+                    console.log(error);
+                    $scope.message = 'Неправильно указан адрес';
+                };
             });
         };
 }]);
@@ -370,7 +372,7 @@ angwhisky.factory('dataService', ['$http', 'serviceBasePath', '$routeParams', '$
 
     fac.getData = function (datapath) {
         var defer = $q.defer();
-        $http.get(serviceBasePath + '/api/' + datapath + '/').then(function (response) {
+        $http.get(serviceBasePath + 'api/' + datapath + '/').then(function (response) {
             defer.resolve(response.data);
         }, function (error) {
             defer.reject(error.data);
