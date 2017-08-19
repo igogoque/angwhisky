@@ -84,8 +84,12 @@ angwhisky.config(['$routeProvider', '$locationProvider', function ($routeProvide
 
 
 //константы
-angwhisky.constant('serviceBasePath', 'http://localhost:3649/'); //путь к серверу
-angwhisky.constant('ourBasePath', 'http://localhost:3408/'); //путь к клиенту
+//angwhisky.constant('serviceBasePath', 'http://localhost:3649/'); //путь к серверу
+//angwhisky.constant('ourBasePath', 'http://localhost:3408/'); //путь к клиенту
+
+angwhisky.constant('serviceBasePath', 'http://whiskydemo.apphb.com/'); //путь к серверу
+angwhisky.constant('ourBasePath', 'http://angwhisky.apphb.com/'); //путь к клиенту
+
 
 ////////////////////////////////////////////////////////////////контроллеры//////////////////////////////////////////////////////////
 
